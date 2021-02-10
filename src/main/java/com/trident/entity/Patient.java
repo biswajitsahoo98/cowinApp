@@ -62,6 +62,50 @@ public class Patient
 	@Column
 	private String insurance_pro;
 	
+	@Column
+	private String vaccine_type;
+	
+	@Column
+	private String vaccine_batch_no;
+	
+	@Column
+	private String dose_1;
+	
+	@Column
+	private String dose_2;
+	
+	public String getVaccine_type() {
+		return vaccine_type;
+	}
+
+	public void setVaccine_type(String vaccine_type) {
+		this.vaccine_type = vaccine_type;
+	}
+
+	public String getVaccine_batch_no() {
+		return vaccine_batch_no;
+	}
+
+	public void setVaccine_batch_no(String vaccine_batch_no) {
+		this.vaccine_batch_no = vaccine_batch_no;
+	}
+
+	public String getDose_1() {
+		return dose_1;
+	}
+
+	public void setDose_1(String dose_1) {
+		this.dose_1 = dose_1;
+	}
+
+	public String getDose_2() {
+		return dose_2;
+	}
+
+	public void setDose_2(String dose_2) {
+		this.dose_2 = dose_2;
+	}
+
 	@OneToMany(mappedBy="patients", cascade = CascadeType.ALL, orphanRemoval=true)
 	@OrderBy("patientKey.sequence")
 	private List<History> history;
